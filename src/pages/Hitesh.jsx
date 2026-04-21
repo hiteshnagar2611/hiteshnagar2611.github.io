@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 
 const url = (filePath) => `${import.meta.env.BASE_URL}${filePath.replace(/^\//, '')}`;
 
@@ -8,23 +6,76 @@ const Hitesh = () => {
     const member = {
         name: 'Hitesh Nagar',
         role: 'Project Associate',
-        image: url('/images/team/hitesh.jpg'),
+        image: url('/images/hitesh.jpg'),
         bio: `I am a Project Associate at CSIR-IGIB in New Delhi, where I work with Dr. Lipi Thukral. My current research focuses on protein language models (PLMs), graph neural networks (GNNs), and AI for biology.
 
-I have been fortunate to work with amazing mentors across different institutions. In 2025, I worked at Secure Meters Limited with Rahul Mathur on network security. In summer 2024, I worked with Jythi Veduradha at IIT Hyderabad on API misuse prediction, and with Jimson Mathew at IIT Patna on automated catalogue creation using computer vision. In summer 2023, I was part of the VL2G team at IIT Jodhpur, led by Anand Mishra, where I developed a scene-text annotation tool for Indian languages.
-
+I have been fortunate to work with amazing mentors across different institutions. In 2025, I worked at Secure Meters Limited with Rahul Mathur on network security. In summer 2024, I worked with Jyothi Vedurada at IIT Hyderabad on API misuse prediction, and with Jimson Mathew at IIT Patna on automated catalogue creation using computer vision. In summer 2023, I was part of the VL2G team at IIT Jodhpur, led by Anand Mishra, where I developed a scene-text annotation tool for Indian languages.
 My research interests lie in deep learning, natural language processing, and large language models. I am particularly interested in building AI applications across domains, bridging research with real-world impact.`,
         education: [
-            'MBM University, Jodhpur, India (June 2025)'
+            {
+                institution: 'MBM University',
+                location: 'Jodhpur, India',
+                date: 'June 2025',
+                logo: url('/images/logos/mbm.png')
+            }
         ],
         experience: [
-            'Secure Meters Limited, Graduate Engineer trainee(Network Security) | Udaipur, RJ July 2025 ‑ Present\n• Managed and secured computer networks by configuring firewalls, switches, and applying cybersecurity best practices to prevent threats and ensure system integrity. Managed around 50+ tickets every month.',
-            'Secure Meters Limited, Software Engineering Intern | Udaipur, RJ Jan 2025 ‑ Feb 2025\n• Designed and implemented an Employee Benevolent Software System, transitioning the company\'s process from offline (paper-based) to a fully online platform, enhancing efficiency by 70%, accessibility, and record management.',
-            'Indian Institute of Technology Hyderabad, Summer Intern | Sangareedy, TS June 2024 ‑ July 2024\n• Built and optimized a dataset of 15K+ code samples for API misuse prediction, enhancing model training efficiency and accuracy in software reliability tasks.',
-            'Indian Institute of Technology Patna, Computer Vision Intern | Remote March 2024 ‑ Apr 2024\n• Reduced recognition errors by 26% and improved text recognition accuracy by 18% in a supermarket product identification pipeline.\n• Implemented advanced image processing techniques including skeletonization, binary conversion, and ABINET based on ASTER for robust recognition across a self made labeled dataset of 250,000+ images spanning 500+ brand classes.',
-            'Indian Institute of Technology Goa, NSM Intern | Remote Jan 2024 ‑ Feb 2024\n• Developed and optimized C++ code for CFD Solver , ensuring high performance on various GPU architectures using Kokkos.\n• Converted CUDA/OpenACC code to Kokkos, enabling performance portability across NVIDIA, AMD, and Intel GPUs with CUDA and OpenMP.',
-            'Indian Institute of Technology Jodhpur, Project Intern | Jodhpur, RJ June 2023 ‑ July 2023\n• Developed and deployed a desktop application, enabling seamless text annotation in 10+ Indian regional languages for computer vision tasks; enhanced annotation process and accuracy by 40%.',
-            'Oil and Natural Gas Corporation Dehradun, Summer Trainee | Remote June 2023 ‑ July 2023\n• Led the development and implementation of machine learning models for facies identification from well logs, increasing accuracy by 30% and efficiency by 40% in geological analysis for oil discovery.'
+            {
+                company: 'CSIR-IGIB',
+                position: 'Project Associate',
+                location: 'New Delhi',
+                date: 'Present',
+                logo: url('/images/logos/csir.jpg')
+            },
+            {
+                company: 'Secure Meters Limited',
+                position: 'Graduate Engineer trainee (Network Security)',
+                location: 'Udaipur, RJ',
+                date: 'July 2025 - Present',
+                logo: url('/images/logos/secure.jpeg')
+            },
+            {
+                company: 'Secure Meters Limited',
+                position: 'Software Engineering Intern',
+                location: 'Udaipur, RJ',
+                date: 'Jan 2025 - Feb 2025',
+                logo: url('/images/logos/secure.jpeg')
+            },
+            {
+                company: 'Indian Institute of Technology Hyderabad',
+                position: 'Summer Intern',
+                location: 'Sangareedy, TS',
+                date: 'June 2024 - July 2024',
+                logo: url('/images/logos/iith.png')
+            },
+            {
+                company: 'Indian Institute of Technology Patna',
+                position: 'Computer Vision Intern',
+                location: 'Remote',
+                date: 'March 2024 - Apr 2024',
+                logo: url('/images/logos/iitp.png')
+            },
+            {
+                company: 'Indian Institute of Technology Goa',
+                position: 'NSM Intern',
+                location: 'Remote',
+                date: 'Jan 2024 - Feb 2024',
+                logo: url('/images/logos/iitg.png')
+            },
+            {
+                company: 'Indian Institute of Technology Jodhpur',
+                position: 'Project Intern',
+                location: 'Jodhpur, RJ',
+                date: 'June 2023 - July 2023',
+                logo: url('/images/logos/iitj.jpg')
+            },
+            {
+                company: 'Oil and Natural Gas Corporation',
+                position: 'Summer Trainee',
+                location: 'Dehradun',
+                date: 'June 2023 - July 2023',
+                logo: url('/images/logos/ongc.png')
+            }
         ],
         awards: ['Research Assistantship'],
         publications: 2,
@@ -35,10 +86,6 @@ My research interests lie in deep learning, natural language processing, and lar
         <div className="min-h-screen" style={{ backgroundColor: '#ffffff', color: '#333333', fontFamily: 'Roboto, sans-serif' }}>
             <header className="py-12 px-8">
                 <div className="max-w-4xl mx-auto">
-                    <Link to="/team" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8 text-sm">
-                        <ArrowLeft className="w-4 h-4 mr-2" />
-                        Back to Team
-                    </Link>
                     <h1 className="text-4xl font-bold mb-2">
                         <span className="font-bold">{member.name.split(' ')[0]}</span> {member.name.split(' ').slice(1).join(' ')}
                     </h1>
@@ -65,9 +112,9 @@ My research interests lie in deep learning, natural language processing, and lar
                     </div>
 
                     <div className="clearfix text-gray-700 leading-relaxed mb-12">
-                        {member.bio.split('\n').map((paragraph, index) => (
-                            <p key={index} className="mb-4">{paragraph}</p>
-                        ))}
+                        <p className="mb-4">I am a Project Associate at CSIR-IGIB in New Delhi, where I work with <a href="https://www.igib.res.in/profile/dr-lipi-thukral" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Dr. Lipi Thukral</a>. My current research focuses on protein language models (PLMs), graph neural networks (GNNs), and AI for biology.</p>
+                        <p className="mb-4">I have been fortunate to work with amazing mentors across different institutions. In 2025, I worked at Secure Meters Limited with Rahul Mathur on network security. In summer 2024, I worked with <a href="https://jyothivedurada.github.io/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Jyothi Vedurada</a> at IIT Hyderabad on API misuse prediction, and with <a href="https://iitp.irins.org/profile/62448" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Jimson Mathew</a> at IIT Patna on automated catalogue creation using computer vision. In summer 2023, I was part of the VL2G team at IIT Jodhpur, led by <a href="https://anandmishra22.github.io/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Anand Mishra</a>, where I developed a scene-text annotation tool for Indian languages.</p>
+                        <p className="mb-4">My research interests lie in deep learning, natural language processing, and large language models. I am particularly interested in building AI applications across domains, bridging research with real-world impact.</p>
                     </div>
                 </div>
 
@@ -76,11 +123,25 @@ My research interests lie in deep learning, natural language processing, and lar
                         <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Education</a>
                     </h2>
                     <div className="education">
-                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                        <div className="space-y-4">
                             {member.education.map((edu, index) => (
-                                <li key={index} className="text-base">{edu}</li>
+                                <div key={index} className="flex items-start gap-4">
+                                    <img 
+                                        src={edu.logo} 
+                                        alt={edu.institution}
+                                        className="w-16 h-16 rounded object-cover flex-shrink-0"
+                                        onError={(e) => {
+                                            e.target.src = 'https://via.placeholder.com/60x60?text=University';
+                                        }}
+                                    />
+                                    <div className="flex-1">
+                                        <h4 className="font-semibold text-lg text-gray-900">{edu.institution}</h4>
+                                        <p className="text-gray-700">{edu.location}</p>
+                                        <p className="text-gray-600 text-sm">{edu.date}</p>
+                                    </div>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
                 </section>
 
@@ -89,22 +150,29 @@ My research interests lie in deep learning, natural language processing, and lar
                         <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Experience</a>
                     </h2>
                     <div className="experience">
-                        <div className="space-y-6">
-                            {member.experience.map((exp, index) => {
-                                const lines = exp.split('\n');
-                                const title = lines[0];
-                                const bullets = lines.slice(1);
-                                return (
-                                    <div key={index} className="mb-4">
-                                        <h4 className="font-semibold text-lg text-gray-900 mb-2">{title}</h4>
-                                        <ul className="list-disc list-inside ml-4 space-y-1 text-gray-700">
-                                            {bullets.map((bullet, i) => (
-                                                <li key={i} className="text-base leading-relaxed">{bullet}</li>
-                                            ))}
-                                        </ul>
+                        <div className="space-y-4">
+                            {member.experience.map((exp, index) => (
+                                <div key={index} className="flex items-start gap-4">
+                                    <img 
+                                        src={exp.logo} 
+                                        alt={exp.company}
+                                        className="w-16 h-16 rounded object-cover flex-shrink-0"
+                                        onError={(e) => {
+                                            e.target.src = 'https://via.placeholder.com/60x60?text=Company';
+                                        }}
+                                    />
+                                    <div className="flex-1">
+                                        <div className="flex justify-between items-start">
+                                            <div>
+                                                <h4 className="font-semibold text-lg text-gray-900">{exp.position}</h4>
+                                                <p className="text-gray-700">{exp.company}</p>
+                                                <p className="text-gray-600 text-sm">{exp.location}</p>
+                                            </div>
+                                            <p className="text-gray-600 text-sm font-medium">{exp.date}</p>
+                                        </div>
                                     </div>
-                                );
-                            })}
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
