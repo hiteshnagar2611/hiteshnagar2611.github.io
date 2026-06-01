@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hitesh Nagar — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --cream-dark: #EDE6D6;
+    --ink: #1A1816;
+    --ink-light: #3D3830;
+    --ink-muted: #6B6358;
+    --ink-faint: #9E9488;
+    --accent: #C17D3C;
+    --accent-light: #E8C89A;
+    --accent-pale: #F5E8D3;
+    --border: rgba(26,24,22,0.10);
+    --border-strong: rgba(26,24,22,0.18);
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --serif: 'Lora', Georgia, serif;
+    --nav-h: 60px;
+  }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ─────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: var(--nav-h);
+    background: rgba(245,240,232,0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(1.5rem, 5vw, 4rem);
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links {
+    display: flex; align-items: center; gap: 0.25rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--ink-muted);
+    text-decoration: none;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    transition: color 0.2s, background 0.2s;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links a:hover {
+    color: var(--ink);
+    background: var(--cream-dark);
+  }
+
+  /* ── LAYOUT ──────────────────────────────────────── */
+  main { padding-top: var(--nav-h); }
+
+  section {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 5rem clamp(1.5rem, 5vw, 2rem);
+  }
+
+  section + section {
+    border-top: 0.5px solid var(--border);
+  }
+
+  /* ── HERO ────────────────────────────────────────── */
+  #hero {
+    min-height: calc(100vh - var(--nav-h));
+    display: flex; flex-direction: column; justify-content: center;
+    padding-top: 3rem; padding-bottom: 3rem;
+    max-width: 780px;
+    margin: 0 auto;
+    padding-left: clamp(1.5rem, 5vw, 2rem);
+    padding-right: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .hero-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+
+  .hero-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px; height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    font-weight: 500;
+    line-height: 1.12;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--ink-muted);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--ink-muted);
+    max-width: 520px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-links {
+    display: flex; flex-wrap: wrap; gap: 0.75rem;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.55rem 1.2rem;
+    border-radius: 999px;
+    border: 0.5px solid var(--border-strong);
+    color: var(--ink-light);
+    background: transparent;
+    transition: background 0.18s, border-color 0.18s, color 0.18s;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+  }
+
+  .btn-primary:hover {
+    background: var(--ink-light);
+    border-color: var(--ink-light);
+    color: var(--cream);
+  }
+
+  .btn svg, .btn-icon {
+    width: 14px; height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTION HEADER ──────────────────────────────── */
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── ABOUT ───────────────────────────────────────── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 580px) { .about-grid { grid-template-columns: 1fr; } }
+
+  .about-card {
+    background: var(--cream-dark);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .about-card-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.4rem;
+  }
+
+  .about-card-value {
+    font-size: 0.95rem;
+    color: var(--ink-light);
+    line-height: 1.5;
+  }
+
+  .about-body {
+    font-size: 1rem;
+    color: var(--ink-muted);
+    line-height: 1.85;
+    max-width: 640px;
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-grid {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .skill-tag {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--ink-light);
+    background: var(--cream-dark);
+    border: 0.5px solid var(--border);
+    border-radius: 999px;
+    padding: 0.3rem 0.85rem;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── TIMELINE (Experience & Education) ───────────── */
+  .timeline {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px; bottom: 8px;
+    width: 0.5px;
+    background: var(--border-strong);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 8px;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 0.5px var(--accent);
+  }
+
+  .timeline-date {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .timeline-title {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-org {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-body {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    line-height: 1.75;
+  }
+
+  .timeline-body ul {
+    padding-left: 1.1rem;
+    margin-top: 0.3rem;
+  }
+
+  .timeline-body li {
+    margin-bottom: 0.3rem;
+    color: var(--ink-muted);
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-pale);
+    border: 0.5px solid var(--accent-light);
+    border-radius: 999px;
+    padding: 0.2rem 0.7rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  /* ── PROJECTS ────────────────────────────────────── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 560px) { .projects-grid { grid-template-columns: 1fr; } }
+
+  .project-card {
+    background: var(--cream);
+    border: 0.5px solid var(--border-strong);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex; flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.2s, background 0.2s;
+    text-decoration: none;
+  }
+
+  .project-card:hover {
+    border-color: var(--accent);
+    background: var(--accent-pale);
+  }
+
+  .project-icon {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: var(--cream-dark);
+    border: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .project-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .project-sub {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .project-desc {
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .project-tags {
+    display: flex; flex-wrap: wrap; gap: 0.35rem;
+    margin-top: 0.25rem;
+  }
+
+  .project-tag {
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    background: var(--cream-dark);
+    border: 0.5px solid var(--border);
+    border-radius: 999px;
+    padding: 0.18rem 0.6rem;
+  }
+
+  .project-link {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+    transition: color 0.15s;
+  }
+
+  .project-link:hover { color: var(--accent); }
+
+  /* ── ACHIEVEMENTS ────────────────────────────────── */
+  .achievements {
+    display: flex; flex-wrap: wrap; gap: 0.6rem;
+    margin-top: 0.75rem;
+  }
+
+  .achievement-chip {
+    font-size: 0.78rem;
+    color: var(--ink-light);
+    background: var(--cream-dark);
+    border: 0.5px solid var(--border-strong);
+    border-radius: 8px;
+    padding: 0.35rem 0.85rem;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+
+  .achievement-chip::before {
+    content: '🏆';
+    font-size: 0.75rem;
+  }
+
+  /* ── TRAVEL ──────────────────────────────────────── */
+  .travel-intro {
+    font-size: 1rem;
+    color: var(--ink-muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .travel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.85rem;
+  }
+
+  .travel-card {
+    background: var(--cream-dark);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 0;
+    display: flex; flex-direction: column;
+    transition: border-color 0.2s, transform 0.18s, box-shadow 0.18s;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .travel-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26,24,22,0.10);
+  }
+
+  .travel-card-thumb {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: var(--cream-dark);
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .travel-card-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .travel-card:hover .travel-card-thumb img {
+    transform: scale(1.04);
+  }
+
+  .travel-card-thumb .thumb-placeholder {
+    font-size: 2rem;
+    opacity: 0.5;
+  }
+
+  .travel-card-thumb .photo-count {
+    position: absolute;
+    bottom: 6px; right: 8px;
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: #fff;
+    background: rgba(26,24,22,0.55);
+    backdrop-filter: blur(4px);
+    border-radius: 999px;
+    padding: 0.15rem 0.55rem;
+    letter-spacing: 0.03em;
+  }
+
+  .travel-card-thumb .add-hint {
+    position: absolute;
+    inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.3rem;
+    opacity: 0;
+    background: rgba(193,125,60,0.12);
+    transition: opacity 0.2s;
+    font-size: 0.72rem;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .travel-card:hover .add-hint { opacity: 1; }
+
+  .travel-card-info {
+    padding: 0.8rem 1rem;
+    display: flex; flex-direction: column; gap: 0.2rem;
+  }
+
+  .travel-emoji {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .travel-place {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .travel-state {
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    line-height: 1.4;
+  }
+
+  /* ── LIGHTBOX MODAL ──────────────────────────────── */
+  .lb-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(20,18,15,0.82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    align-items: center; justify-content: center;
+    padding: 1.5rem;
+  }
+
+  .lb-overlay.open { display: flex; }
+
+  .lb-modal {
+    background: var(--cream);
+    border-radius: 18px;
+    border: 0.5px solid var(--border-strong);
+    width: 100%;
+    max-width: 860px;
+    max-height: 90vh;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    animation: scaleIn 0.22s ease;
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .lb-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 0.5px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .lb-title {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .lb-title-emoji { font-size: 1.2rem; }
+
+  .lb-subtitle {
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    font-family: var(--sans);
+    font-weight: 400;
+    margin-top: 0.1rem;
+  }
+
+  .lb-close {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    border: 0.5px solid var(--border-strong);
+    background: transparent;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-muted);
+    font-size: 1rem;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
+  }
+
+  .lb-close:hover { background: var(--ink); color: var(--cream); }
+
+  .lb-body {
+    flex: 1; overflow-y: auto;
+    padding: 1.25rem 1.5rem;
+    display: flex; flex-direction: column; gap: 1.25rem;
+  }
+
+  /* Upload zone */
+  .lb-upload-zone {
+    border: 1.5px dashed var(--accent-light);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.18s, border-color 0.18s;
+    background: var(--accent-pale);
+    flex-shrink: 0;
+  }
+
+  .lb-upload-zone:hover, .lb-upload-zone.drag-over {
+    background: #F0D9BE;
+    border-color: var(--accent);
+  }
+
+  .lb-upload-zone input[type="file"] { display: none; }
+
+  .lb-upload-icon { font-size: 1.5rem; margin-bottom: 0.3rem; }
+
+  .lb-upload-text {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  .lb-upload-text strong {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* Gallery grid */
+  .lb-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .lb-gallery-empty {
+    text-align: center;
+    padding: 2rem;
+    color: var(--ink-faint);
+    font-size: 0.88rem;
+    grid-column: 1 / -1;
+  }
+
+  .lb-img-wrap {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--cream-dark);
+    border: 0.5px solid var(--border);
+  }
+
+  .lb-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.25s ease;
+  }
+
+  .lb-img-wrap:hover img { transform: scale(1.05); }
+
+  .lb-img-del {
+    position: absolute; top: 6px; right: 6px;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: rgba(20,18,15,0.6);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.15s;
+    line-height: 1;
+  }
+
+  .lb-img-wrap:hover .lb-img-del { opacity: 1; }
+
+  /* Full-size viewer */
+  .lb-viewer {
+    display: none;
+    position: fixed; inset: 0; z-index: 1100;
+    background: rgba(10,9,8,0.92);
+    align-items: center; justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+  }
+
+  .lb-viewer.open { display: flex; }
+
+  .lb-viewer img {
+    max-width: 100%; max-height: 80vh;
+    border-radius: 10px;
+    object-fit: contain;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .lb-viewer-close {
+    position: absolute; top: 1.25rem; right: 1.25rem;
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    border: 0.5px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s;
+  }
+
+  .lb-viewer-close:hover { background: rgba(255,255,255,0.18); }
+
+  .lb-viewer-nav {
+    display: flex; align-items: center; gap: 1rem;
+  }
+
+  .lb-viewer-btn {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 0.5px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s;
+  }
+
+  .lb-viewer-btn:hover { background: rgba(255,255,255,0.18); }
+
+  .lb-viewer-counter {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    min-width: 60px;
+    text-align: center;
+  }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  footer {
+    border-top: 0.5px solid var(--border);
+    padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+  }
+
+  .footer-links {
+    display: flex; gap: 1rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  /* ── ANIMATIONS ──────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.22s; }
+  .delay-3 { animation-delay: 0.34s; }
+  .delay-4 { animation-delay: 0.46s; }
+
+  /* scrolled-in reveals */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── RESPONSIVE NAV ──────────────────────────────── */
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">Hitesh Nagar</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#travel">Travel</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section id="hero" style="border-top: none;">
+  <div class="hero-label fade-up">Available for opportunities</div>
+  <h1 class="fade-up delay-1">Hitesh Nagar<br/><em>Researcher &amp; Builder</em></h1>
+  <p class="hero-desc fade-up delay-2">
+    Working at the intersection of AI, protein science, and software engineering. 
+    Currently a Project Associate at CSIR-IGIB, building foundational models for protein research 
+    and crafting tools that make science easier.
+  </p>
+  <div class="hero-links fade-up delay-3">
+    <a class="btn btn-primary" href="https://www.linkedin.com/in/hiteshnagar" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a class="btn" href="https://github.com/hiteshnagar2611" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+    <a class="btn" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+      Download CV
+    </a>
+    <a class="btn" href="mailto:Hiteshnagar.work@gmail.com">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <p class="section-label">About</p>
+    <h2>Who I am</h2>
+    <p class="about-body">
+      I'm a researcher and engineer passionate about applying machine learning to solve real-world scientific 
+      challenges — from protein structure prediction to computer vision and NLP. With hands-on experience 
+      across six research institutions including IIT Hyderabad, IIT Patna, and IIT Goa, I love turning 
+      complex problems into elegant solutions.
+    </p>
+    <p class="about-body">
+      When I'm not training models or writing code, you'll find me exploring new cities across India 
+      or contributing to open-source projects that solve local problems.
+    </p>
+  </div>
+
+  <div class="about-grid reveal" style="animation-delay:0.1s">
+    <div class="about-card">
+      <div class="about-card-label">Location</div>
+      <div class="about-card-value">New Delhi, India</div>
+    </div>
+    <div class="about-card">
+      <div class="about-card-label">Current Role</div>
+      <div class="about-card-value">Project Associate, CSIR-IGIB</div>
+    </div>
+    <div class="about-card">
+      <div class="about-card-label">Contact</div>
+      <div class="about-card-value">Hiteshnagar.work@gmail.com</div>
+    </div>
+    <div class="about-card">
+      <div class="about-card-label">Phone</div>
+      <div class="about-card-value">+91 8440843866</div>
+    </div>
+  </div>
+
+  <div class="reveal" style="animation-delay:0.15s">
+    <p class="section-label" style="margin-top:2rem">Skills</p>
+    <div class="skills-grid">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">C/C++</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">PyTorch</span>
+      <span class="skill-tag">TensorFlow</span>
+      <span class="skill-tag">Scikit-learn</span>
+      <span class="skill-tag">OpenCV</span>
+      <span class="skill-tag">Hugging Face</span>
+      <span class="skill-tag">LLMs (GPT-3, BERT)</span>
+      <span class="skill-tag">NumPy / Pandas</span>
+      <span class="skill-tag">MySQL</span>
+      <span class="skill-tag">Linux</span>
+      <span class="skill-tag">Git / GitHub</span>
+      <span class="skill-tag">PyQT5</span>
+      <span class="skill-tag">Kokkos / CUDA</span>
+      <span class="skill-tag">Leaflet.js</span>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="reveal">
+    <p class="section-label">Education</p>
+    <h2>Academic background</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2021 – 2025</div>
+        <div class="timeline-title">B.E. in Information Technology</div>
+        <div class="timeline-org">MBM University, Jodhpur, Rajasthan</div>
+        <div class="timeline-body">
+          <p>GPA: 7.25 / 10</p>
+          <p style="margin-top:0.5rem;font-size:0.85rem;color:var(--ink-faint);">Relevant courses: Data Structures &amp; Algorithms · DBMS · AI &amp; ML · Computer Networks · Software Engineering · OOP</p>
+          <div class="achievements" style="margin-top:1rem">
+            <span class="achievement-chip">2nd @ Smart India Hackathon '23</span>
+            <span class="achievement-chip">NCVPRIPG '23</span>
+            <span class="achievement-chip">GATE '24 Qualified</span>
+            <span class="achievement-chip">2nd Neural Showdown @ ENCARTA '23</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="reveal">
+    <p class="section-label">Experience</p>
+    <h2>Where I've worked</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jan 2026 – Present</div>
+        <div class="timeline-title">Project Associate <span class="badge">Current</span></div>
+        <div class="timeline-org">CSIR-Institute of Genomics and Integrative Biology · New Delhi</div>
+        <div class="timeline-body">
+          <ul>
+            <li>Working on Protein Foundational Models, Generative Models, and Graph Convolutional Networks for protein research.</li>
+            <li>Building internal software tools that streamline daily lab workflows.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jul 2025 – Jan 2026</div>
+        <div class="timeline-title">Graduate Engineer Trainee — Network Security</div>
+        <div class="timeline-org">Secure Meters Limited · Udaipur, Rajasthan</div>
+        <div class="timeline-body">
+          <ul>
+            <li>Managed and secured computer networks by configuring firewalls and switches, applying cybersecurity best practices.</li>
+            <li>Resolved 50+ tickets per month, ensuring system integrity and uptime.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jan 2025 – Feb 2025</div>
+        <div class="timeline-title">Software Engineering Intern</div>
+        <div class="timeline-org">Secure Meters Limited · Udaipur, Rajasthan</div>
+        <div class="timeline-body">
+          <ul>
+            <li>Designed a database and implemented an Employee Benevolent Software System, transitioning from paper-based to fully digital processes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jun 2024 – Jul 2024</div>
+        <div class="timeline-title">Summer Intern</div>
+        <div class="timeline-org">IIT Hyderabad · Sangareddy, Telangana</div>
+        <div class="timeline-body">
+          <ul>
+            <li>Built and optimized a dataset of 15K+ code samples for API misuse prediction, improving model training efficiency.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jun 2024 – Jul 2024</div>
+        <div class="timeline-title">Computer Vision Intern</div>
+        <div class="timeline-org">IIT Patna · Remote</div>
+        <div class="timeline-body">
+          <ul>
+            <li>Reduced recognition errors by 26% and improved text accuracy by 18% in supermarket product identification.</li>
+            <li>Implemented skeletonization, binary conversion, and fine-tuned ABINET on a self-made dataset of 250K+ images across 500+ brand classes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jan 2024 – Feb 2024</div>
+        <div class="timeline-title">NSM Intern</div>
+        <div class="timeline-org">IIT Goa · Remote</div>
+        <div class="timeline-body">
+          <ul>
+            <li>Developed and optimized C++ code for a CFD Solver using Kokkos for performance portability across NVIDIA, AMD, and Intel GPUs.</li>
+            <li>Converted CUDA/OpenACC code to Kokkos with OpenMP support.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jun 2023 – Jul 2023</div>
+        <div class="timeline-title">Project Intern</div>
+        <div class="timeline-org">IIT Jodhpur · Jodhpur, Rajasthan</div>
+        <div class="timeline-body">
+          <ul>
+            <li>Deployed a desktop application for text annotation in 10+ Indian regional languages; improved annotation accuracy by 40%.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jun 2023 – Jul 2023</div>
+        <div class="timeline-title">Summer Trainee</div>
+        <div class="timeline-org">Oil and Natural Gas Corporation (ONGC) · Remote</div>
+        <div class="timeline-body">
+          <ul>
+            <li>Led development of ML models for facies identification from well logs, boosting accuracy by 30% and efficiency by 40%.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="reveal">
+    <p class="section-label">Projects</p>
+    <h2>Things I've built</h2>
+    <div class="projects-grid">
+
+      <div class="project-card" style="cursor:default;">
+        <div class="project-icon">🗺️</div>
+        <div>
+          <div class="project-sub">Web App</div>
+          <div class="project-title">APANIBUS — Jodhpur Bus Route Finder</div>
+        </div>
+        <p class="project-desc">
+          A city bus route finder with dynamic map integration (Leaflet.js), 
+          real-time auto-suggest with debounce, highlighted matched text, 
+          and keyboard navigation. Serving daily commuters in Jodhpur.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">HTML/CSS/JS</span>
+          <span class="project-tag">Leaflet.js</span>
+          <span class="project-tag">Debounce</span>
+        </div>
+        <a class="project-link" href="#" target="_blank" rel="noopener">
+          View project
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="project-card" style="cursor:default;">
+        <div class="project-icon">✍️</div>
+        <div>
+          <div class="project-sub">Deep Learning · NCVPRIPG</div>
+          <div class="project-title">Writer Verification — Handwritten Document Authentication</div>
+        </div>
+        <p class="project-desc">
+          Designed a Siamese Network with a classifier for authenticating handwritten 
+          Hindi documents. Trained on a real-world dataset, achieving AUC of 0.85. 
+          Presented at NCVPRIPG '23.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">PyTorch</span>
+          <span class="project-tag">Siamese Network</span>
+          <span class="project-tag">OpenCV</span>
+          <span class="project-tag">Scikit-learn</span>
+        </div>
+        <a class="project-link" href="https://github.com/hiteshnagar2611" target="_blank" rel="noopener">
+          View on GitHub
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="project-card" style="cursor:default;">
+        <div class="project-icon">🧬</div>
+        <div>
+          <div class="project-sub">Bioinformatics · AI</div>
+          <div class="project-title">Protein Foundational Models</div>
+        </div>
+        <p class="project-desc">
+          Working on generative models and graph convolutional networks for protein 
+          representation learning at CSIR-IGIB. Exploring structure-function 
+          relationships using deep learning.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">PyTorch</span>
+          <span class="project-tag">GCN</span>
+          <span class="project-tag">Generative Models</span>
+        </div>
+        <a class="project-link" href="https://github.com/hiteshnagar2611" target="_blank" rel="noopener">
+          View on GitHub
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="project-card" style="cursor:default;">
+        <div class="project-icon">🏷️</div>
+        <div>
+          <div class="project-sub">Computer Vision · NLP</div>
+          <div class="project-title">Multilingual Annotation Tool</div>
+        </div>
+        <p class="project-desc">
+          Desktop application enabling text annotation in 10+ Indian regional 
+          languages for computer vision tasks. Improved annotation process 
+          accuracy by 40%, developed at IIT Jodhpur.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">PyQT5</span>
+          <span class="project-tag">NLP</span>
+          <span class="project-tag">CV</span>
+        </div>
+        <a class="project-link" href="https://github.com/hiteshnagar2611" target="_blank" rel="noopener">
+          View on GitHub
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRAVEL -->
+<section id="travel">
+  <div class="reveal">
+    <p class="section-label">Travel</p>
+    <h2>Places I've been</h2>
+    <p class="travel-intro">
+      Research has taken me across India — from the tech hubs of Hyderabad and Goa to the 
+      historic streets of Jodhpur. Click any city to add and view your photos.
+    </p>
+    <div class="travel-grid" id="travelGrid">
+      <!-- cards injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX MODAL -->
+<div class="lb-overlay" id="lbOverlay">
+  <div class="lb-modal">
+    <div class="lb-header">
+      <div>
+        <div class="lb-title">
+          <span class="lb-title-emoji" id="lbEmoji"></span>
+          <span id="lbName"></span>
+        </div>
+        <div class="lb-subtitle" id="lbSub"></div>
+      </div>
+      <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+    </div>
+    <div class="lb-body">
+      <label class="lb-upload-zone" id="lbUploadZone">
+        <input type="file" id="lbFileInput" multiple accept="image/*" />
+        <div class="lb-upload-icon">📷</div>
+        <div class="lb-upload-text">
+          <strong>Click to add photos</strong> or drag &amp; drop<br/>
+          JPG, PNG, WEBP — any size
+        </div>
+      </label>
+      <div class="lb-gallery" id="lbGallery">
+        <div class="lb-gallery-empty" id="lbEmpty">No photos yet. Add some above!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FULL-SIZE VIEWER -->
+<div class="lb-viewer" id="lbViewer">
+  <button class="lb-viewer-close" id="lbViewerClose" aria-label="Close viewer">✕</button>
+  <img id="lbViewerImg" src="" alt="Travel photo" />
+  <div class="lb-viewer-nav">
+    <button class="lb-viewer-btn" id="lbPrev" aria-label="Previous">←</button>
+    <span class="lb-viewer-counter" id="lbCounter"></span>
+    <button class="lb-viewer-btn" id="lbNext" aria-label="Next">→</button>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <p class="footer-copy">© 2025 Hitesh Nagar</p>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/hiteshnagar" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/hiteshnagar2611" target="_blank" rel="noopener">GitHub</a>
+    <a href="mailto:Hiteshnagar.work@gmail.com">Email</a>
+    <a href="#">CV</a>
+  </div>
+</footer>
+
+<script>
+  /* ── SCROLL REVEAL ───────────────────────────────── */
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => revealObs.observe(el));
+
+  /* ── TRAVEL DATA ─────────────────────────────────── */
+  const PLACES = [
+    { id: 'delhi',     emoji: '🏛️', name: 'New Delhi',        sub: 'Current · CSIR-IGIB' },
+    { id: 'jodhpur',   emoji: '🏰', name: 'Jodhpur',          sub: 'Rajasthan · Home + IIT Jodhpur' },
+    { id: 'udaipur',   emoji: '🏖️', name: 'Udaipur',          sub: 'Rajasthan · Secure Meters' },
+    { id: 'goa',       emoji: '🌊', name: 'Goa',              sub: 'IIT Goa · NSM Internship' },
+    { id: 'hyderabad', emoji: '🌿', name: 'Hyderabad',        sub: 'Telangana · IIT Hyderabad' },
+    { id: 'patna',     emoji: '🎓', name: 'Patna',            sub: 'Bihar · IIT Patna Internship' },
+    { id: 'dehradun',  emoji: '⛰️', name: 'Dehradun',         sub: 'Uttarakhand · ONGC Trainee' },
+    { id: 'next',      emoji: '✈️', name: 'Next destination?', sub: 'Always exploring…' },
+  ];
+
+  /* photos stored in memory: { [placeId]: [{ dataUrl, name }] } */
+  const photoStore = {};
+  PLACES.forEach(p => photoStore[p.id] = []);
+
+  /* ── BUILD CARDS ─────────────────────────────────── */
+  function buildCards() {
+    const grid = document.getElementById('travelGrid');
+    grid.innerHTML = '';
+    PLACES.forEach(place => {
+      const photos = photoStore[place.id];
+      const card = document.createElement('div');
+      card.className = 'travel-card';
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', `Open photos of ${place.name}`);
+
+      const thumb = photos.length > 0
+        ? `<img src="${photos[0].dataUrl}" alt="${place.name}" />`
+        : `<span class="thumb-placeholder">${place.emoji}</span>`;
+
+      const countBadge = photos.length > 0
+        ? `<span class="photo-count">${photos.length} photo${photos.length !== 1 ? 's' : ''}</span>`
+        : '';
+
+      const addHintIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>`;
+
+      card.innerHTML = `
+        <div class="travel-card-thumb">
+          ${thumb}
+          ${countBadge}
+          <div class="add-hint">${addHintIcon} Add photos</div>
+        </div>
+        <div class="travel-card-info">
+          <div class="travel-place">${place.name}</div>
+          <div class="travel-state">${place.sub}</div>
+        </div>`;
+
+      card.addEventListener('click', () => openModal(place.id));
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openModal(place.id); });
+      grid.appendChild(card);
+    });
+  }
+
+  buildCards();
+
+  /* ── MODAL STATE ─────────────────────────────────── */
+  let currentPlaceId = null;
+  let viewerImages = [];
+  let viewerIndex = 0;
+
+  function openModal(placeId) {
+    currentPlaceId = placeId;
+    const place = PLACES.find(p => p.id === placeId);
+    document.getElementById('lbEmoji').textContent = place.emoji;
+    document.getElementById('lbName').textContent = place.name;
+    document.getElementById('lbSub').textContent = place.sub;
+    renderGallery();
+    document.getElementById('lbOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('lbOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+    buildCards();
+  }
+
+  document.getElementById('lbClose').addEventListener('click', closeModal);
+  document.getElementById('lbOverlay').addEventListener('click', e => {
+    if (e.target === document.getElementById('lbOverlay')) closeModal();
+  });
+
+  /* ── RENDER GALLERY ──────────────────────────────── */
+  function renderGallery() {
+    const gallery = document.getElementById('lbGallery');
+    const empty = document.getElementById('lbEmpty');
+    const photos = photoStore[currentPlaceId];
+
+    if (photos.length === 0) {
+      gallery.innerHTML = '';
+      gallery.appendChild(empty);
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+    gallery.innerHTML = '';
+
+    photos.forEach((photo, idx) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'lb-img-wrap';
+
+      const img = document.createElement('img');
+      img.src = photo.dataUrl;
+      img.alt = photo.name || 'Travel photo';
+      img.addEventListener('click', () => openViewer(idx));
+
+      const del = document.createElement('button');
+      del.className = 'lb-img-del';
+      del.innerHTML = '✕';
+      del.setAttribute('aria-label', 'Remove photo');
+      del.addEventListener('click', e => {
+        e.stopPropagation();
+        photoStore[currentPlaceId].splice(idx, 1);
+        renderGallery();
+      });
+
+      wrap.appendChild(img);
+      wrap.appendChild(del);
+      gallery.appendChild(wrap);
+    });
+  }
+
+  /* ── FILE UPLOAD ─────────────────────────────────── */
+  function handleFiles(files) {
+    Array.from(files).forEach(file => {
+      if (!file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        photoStore[currentPlaceId].push({ dataUrl: e.target.result, name: file.name });
+        renderGallery();
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  document.getElementById('lbFileInput').addEventListener('change', e => handleFiles(e.target.files));
+
+  const zone = document.getElementById('lbUploadZone');
+  zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
+  zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+  zone.addEventListener('drop', e => {
+    e.preventDefault();
+    zone.classList.remove('drag-over');
+    handleFiles(e.dataTransfer.files);
+  });
+
+  /* ── FULL-SIZE VIEWER ────────────────────────────── */
+  function openViewer(idx) {
+    viewerImages = photoStore[currentPlaceId];
+    viewerIndex = idx;
+    updateViewer();
+    document.getElementById('lbViewer').classList.add('open');
+  }
+
+  function updateViewer() {
+    document.getElementById('lbViewerImg').src = viewerImages[viewerIndex].dataUrl;
+    document.getElementById('lbCounter').textContent = `${viewerIndex + 1} / ${viewerImages.length}`;
+  }
+
+  document.getElementById('lbViewerClose').addEventListener('click', () => {
+    document.getElementById('lbViewer').classList.remove('open');
+  });
+
+  document.getElementById('lbPrev').addEventListener('click', () => {
+    viewerIndex = (viewerIndex - 1 + viewerImages.length) % viewerImages.length;
+    updateViewer();
+  });
+
+  document.getElementById('lbNext').addEventListener('click', () => {
+    viewerIndex = (viewerIndex + 1) % viewerImages.length;
+    updateViewer();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (document.getElementById('lbViewer').classList.contains('open')) {
+      if (e.key === 'ArrowLeft') { viewerIndex = (viewerIndex - 1 + viewerImages.length) % viewerImages.length; updateViewer(); }
+      if (e.key === 'ArrowRight') { viewerIndex = (viewerIndex + 1) % viewerImages.length; updateViewer(); }
+      if (e.key === 'Escape') document.getElementById('lbViewer').classList.remove('open');
+    } else if (document.getElementById('lbOverlay').classList.contains('open')) {
+      if (e.key === 'Escape') closeModal();
+    }
+  });
+</script>
+
+</body>
+</html>
