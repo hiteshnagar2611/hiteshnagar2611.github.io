@@ -15,12 +15,12 @@ This is my personal portfolio website built with React and Vite.
 4. Build for production: `npm run build`
 
 ## Deployment
-This site is configured for GitHub Pages deployment. The built files are in the `dist` directory.
+This repository is a GitHub Pages user site and is served from the `main` branch root.
 
-To deploy:
-1. Build the project: `npm run build`
-2. Commit and push the `dist` folder contents to the `main` branch
-3. Enable GitHub Pages in repository settings, set source to `main` branch and `/` (root)
+To deploy the current website:
+1. Push the `index.html` file to the `main` branch.
+2. In GitHub repository settings, enable Pages and select the `main` branch with the root (`/`) folder.
+3. The site will be available at `https://hiteshnagar2611.github.io`.
 
 ## Technologies Used
 - React
