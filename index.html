@@ -1191,7 +1191,7 @@
     <h2>Places I've been</h2>
     <p class="travel-intro">
       Research has taken me across India — from the tech hubs of Hyderabad and Goa to the 
-      historic streets of Jodhpur. Click any city to add and view your photos.
+      historic streets of Jodhpur. Click any city to view your photos from the `photos` folder.
     </p>
     <div class="travel-grid" id="travelGrid">
       <!-- cards injected by JS -->
@@ -1213,16 +1213,10 @@
       <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
     </div>
     <div class="lb-body">
-      <label class="lb-upload-zone" id="lbUploadZone">
-        <input type="file" id="lbFileInput" multiple accept="image/*" />
-        <div class="lb-upload-icon">📷</div>
-        <div class="lb-upload-text">
-          <strong>Click to add photos</strong> or drag &amp; drop<br/>
-          JPG, PNG, WEBP — any size
-        </div>
-      </label>
       <div class="lb-gallery" id="lbGallery">
-        <div class="lb-gallery-empty" id="lbEmpty">No photos yet. Add some above!</div>
+        <div class="lb-gallery-empty" id="lbEmpty">
+          No photos were found. Add images to the corresponding <code>photos/&lt;placeId&gt;/</code> folder and refresh the page.
+        </div>
       </div>
     </div>
   </div>
@@ -1273,9 +1267,26 @@
     { id: 'next',      emoji: '✈️', name: 'Next destination?', sub: 'Always exploring…' },
   ];
 
-  /* photos stored in memory: { [placeId]: [{ dataUrl, name }] } */
+  /* photos loaded from the static photos folder: { [placeId]: [{ url, name }] } */
+  const PHOTO_FILES = {
+    delhi: ['delhi-1.jpg', 'delhi-2.jpg'],
+    jodhpur: ['jodhpur-1.jpg', 'jodhpur-2.jpg'],
+    udaipur: ['udaipur-1.jpg'],
+    goa: ['goa-1.jpg'],
+    hyderabad: ['hyderabad-1.jpg'],
+    patna: ['patna-1.jpg'],
+    dehradun: ['dehradun-1.jpg'],
+    next: []
+  };
+
   const photoStore = {};
-  PLACES.forEach(p => photoStore[p.id] = []);
+  PLACES.forEach(p => {
+    const files = PHOTO_FILES[p.id] || [];
+    photoStore[p.id] = files.map(name => ({
+      url: `photos/${p.id}/${name}`,
+      name: name.replace(/[-_]/g, ' ')
+    }));
+  });
 
   /* ── BUILD CARDS ─────────────────────────────────── */
   function buildCards() {
@@ -1290,7 +1301,7 @@
       card.setAttribute('aria-label', `Open photos of ${place.name}`);
 
       const thumb = photos.length > 0
-        ? `<img src="${photos[0].dataUrl}" alt="${place.name}" />`
+        ? `<img src="${photos[0].url}" alt="${place.name}" />`
         : `<span class="thumb-placeholder">${place.emoji}</span>`;
 
       const countBadge = photos.length > 0
@@ -1303,7 +1314,7 @@
         <div class="travel-card-thumb">
           ${thumb}
           ${countBadge}
-          <div class="add-hint">${addHintIcon} Add photos</div>
+          <div class="add-hint">${addHintIcon} View photos</div>
         </div>
         <div class="travel-card-info">
           <div class="travel-place">${place.name}</div>
@@ -1365,7 +1376,7 @@
       wrap.className = 'lb-img-wrap';
 
       const img = document.createElement('img');
-      img.src = photo.dataUrl;
+      img.src = photo.url;
       img.alt = photo.name || 'Travel photo';
       img.addEventListener('click', () => openViewer(idx));
 
@@ -1385,29 +1396,8 @@
     });
   }
 
-  /* ── FILE UPLOAD ─────────────────────────────────── */
-  function handleFiles(files) {
-    Array.from(files).forEach(file => {
-      if (!file.type.startsWith('image/')) return;
-      const reader = new FileReader();
-      reader.onload = e => {
-        photoStore[currentPlaceId].push({ dataUrl: e.target.result, name: file.name });
-        renderGallery();
-      };
-      reader.readAsDataURL(file);
-    });
-  }
-
-  document.getElementById('lbFileInput').addEventListener('change', e => handleFiles(e.target.files));
-
-  const zone = document.getElementById('lbUploadZone');
-  zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
-  zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
-  zone.addEventListener('drop', e => {
-    e.preventDefault();
-    zone.classList.remove('drag-over');
-    handleFiles(e.dataTransfer.files);
-  });
+  /* ── FILE UPLOAD REMOVED ─────────────────────────── */
+  /* Photo viewing now loads static files from `photos/<placeId>/`. */
 
   /* ── FULL-SIZE VIEWER ────────────────────────────── */
   function openViewer(idx) {
@@ -1418,7 +1408,7 @@
   }
 
   function updateViewer() {
-    document.getElementById('lbViewerImg').src = viewerImages[viewerIndex].dataUrl;
+    document.getElementById('lbViewerImg').src = viewerImages[viewerIndex].url;
     document.getElementById('lbCounter').textContent = `${viewerIndex + 1} / ${viewerImages.length}`;
   }
 
