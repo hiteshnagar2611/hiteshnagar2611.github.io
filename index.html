@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hitesh Nagar — Portfolio</title>
+<title>Hitesh Nagar — PhD Student</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -285,6 +285,20 @@
     position: relative;
     padding-bottom: 2.5rem;
     padding-left: 1.5rem;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 1rem;
+  }
+
+  .timeline-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: var(--cream-dark);
+    border: 0.5px solid var(--border);
+    padding: 4px;
+    margin-top: 2px;
   }
 
   .timeline-item:last-child { padding-bottom: 0; }
@@ -292,7 +306,7 @@
   .timeline-item::before {
     content: '';
     position: absolute;
-    left: -1.5rem;
+    left: 1.5rem;
     top: 8px;
     width: 7px; height: 7px;
     border-radius: 50%;
@@ -857,11 +871,10 @@
 <nav>
   <a class="nav-logo" href="#hero">Hitesh Nagar</a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#education">Education</a></li>
+    <li><a href="#research">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#travel">Travel</a></li>
+    <li><a href="#locations">Travel</a></li>
   </ul>
 </nav>
 
@@ -869,12 +882,11 @@
 
 <!-- HERO -->
 <section id="hero" style="border-top: none;">
-  <div class="hero-label fade-up">Available for opportunities</div>
-  <h1 class="fade-up delay-1">Hitesh Nagar<br/><em>Researcher &amp; Builder</em></h1>
+  <div class="hero-label fade-up">AI · Bioinformatics · Deep Learning</div>
+  <h1 class="fade-up delay-1">Hitesh Nagar<br/><em>Researcher</em></h1>
   <p class="hero-desc fade-up delay-2">
-    Working at the intersection of AI, protein science, and software engineering. 
-    Currently a Project Associate at CSIR-IGIB, building foundational models for protein research 
-    and crafting tools that make science easier.
+    Working on protein structure prediction, foundation models, and 
+    machine learning for computational biology.
   </p>
   <div class="hero-links fade-up delay-3">
     <a class="btn btn-primary" href="https://www.linkedin.com/in/hiteshnagar" target="_blank" rel="noopener">
@@ -896,61 +908,60 @@
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- ABOUT / RESEARCH -->
+<section id="research">
   <div class="reveal">
     <p class="section-label">About</p>
     <h2>Who I am</h2>
     <p class="about-body">
-      I'm a researcher and engineer passionate about applying machine learning to solve real-world scientific 
-      challenges — from protein structure prediction to computer vision and NLP. With hands-on experience 
-      across six research institutions including IIT Hyderabad, IIT Patna, and IIT Goa, I love turning 
-      complex problems into elegant solutions.
+      I work on deep learning for computational biology — protein structure prediction, 
+      foundation models, and representation learning. My experience spans CSIR-IGIB, 
+      IIT Hyderabad, IIT Patna, and IIT Goa.
     </p>
     <p class="about-body">
-      When I'm not training models or writing code, you'll find me exploring new cities across India 
-      or contributing to open-source projects that solve local problems.
+      I build tools that make research faster. When not training models, 
+      I contribute to open-source bioinformatics software.
     </p>
   </div>
 
   <div class="about-grid reveal" style="animation-delay:0.1s">
     <div class="about-card">
-      <div class="about-card-label">Location</div>
-      <div class="about-card-value">New Delhi, India</div>
+      <div class="about-card-label">Research</div>
+      <div class="about-card-value">AI + Bioinformatics</div>
     </div>
     <div class="about-card">
-      <div class="about-card-label">Current Role</div>
-      <div class="about-card-value">Project Associate, CSIR-IGIB</div>
+      <div class="about-card-label">Status</div>
+      <div class="about-card-value">Research Associate, CSIR-IGIB</div>
     </div>
     <div class="about-card">
       <div class="about-card-label">Contact</div>
       <div class="about-card-value">Hiteshnagar.work@gmail.com</div>
     </div>
     <div class="about-card">
-      <div class="about-card-label">Phone</div>
-      <div class="about-card-value">+91 8440843866</div>
+      <div class="about-card-label">Based in</div>
+      <div class="about-card-value">New Delhi, India</div>
     </div>
   </div>
 
   <div class="reveal" style="animation-delay:0.15s">
-    <p class="section-label" style="margin-top:2rem">Skills</p>
+    <p class="section-label" style="margin-top:2rem">Research Skills</p>
     <div class="skills-grid">
-      <span class="skill-tag">Python</span>
-      <span class="skill-tag">C/C++</span>
-      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">Deep Learning</span>
+      <span class="skill-tag">Protein Structure Prediction</span>
+      <span class="skill-tag">Computational Biology</span>
       <span class="skill-tag">PyTorch</span>
       <span class="skill-tag">TensorFlow</span>
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">Bioinformatics</span>
+      <span class="skill-tag">Genomics</span>
+      <span class="skill-tag">Graph Neural Networks</span>
+      <span class="skill-tag">Generative Models</span>
+      <span class="skill-tag">AlphaFold</span>
+      <span class="skill-tag">MD Simulation</span>
       <span class="skill-tag">Scikit-learn</span>
-      <span class="skill-tag">OpenCV</span>
-      <span class="skill-tag">Hugging Face</span>
-      <span class="skill-tag">LLMs (GPT-3, BERT)</span>
       <span class="skill-tag">NumPy / Pandas</span>
-      <span class="skill-tag">MySQL</span>
       <span class="skill-tag">Linux</span>
       <span class="skill-tag">Git / GitHub</span>
-      <span class="skill-tag">PyQT5</span>
-      <span class="skill-tag">Kokkos / CUDA</span>
-      <span class="skill-tag">Leaflet.js</span>
     </div>
   </div>
 </section>
@@ -962,17 +973,20 @@
     <h2>Academic background</h2>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-date">2021 – 2025</div>
-        <div class="timeline-title">B.E. in Information Technology</div>
-        <div class="timeline-org">MBM University, Jodhpur, Rajasthan</div>
-        <div class="timeline-body">
-          <p>GPA: 7.25 / 10</p>
-          <p style="margin-top:0.5rem;font-size:0.85rem;color:var(--ink-faint);">Relevant courses: Data Structures &amp; Algorithms · DBMS · AI &amp; ML · Computer Networks · Software Engineering · OOP</p>
-          <div class="achievements" style="margin-top:1rem">
-            <span class="achievement-chip">2nd @ Smart India Hackathon '23</span>
-            <span class="achievement-chip">NCVPRIPG '23</span>
-            <span class="achievement-chip">GATE '24 Qualified</span>
-            <span class="achievement-chip">2nd Neural Showdown @ ENCARTA '23</span>
+        <img class="timeline-logo" src="logos/mbm.png" alt="MBM University" />
+        <div>
+          <div class="timeline-date">2021 – 2025</div>
+          <div class="timeline-title">B.E. in Information Technology</div>
+          <div class="timeline-org">MBM University, Jodhpur, Rajasthan</div>
+          <div class="timeline-body">
+            <p>GPA: 7.25 / 10</p>
+            <p style="margin-top:0.5rem;font-size:0.85rem;color:var(--ink-faint);">Relevant courses: Data Structures &amp; Algorithms · DBMS · AI &amp; ML · Computer Networks · Software Engineering · OOP</p>
+            <div class="achievements" style="margin-top:1rem">
+              <span class="achievement-chip">2nd @ Smart India Hackathon '23</span>
+              <span class="achievement-chip">NCVPRIPG '23</span>
+              <span class="achievement-chip">GATE '24 Qualified</span>
+              <span class="achievement-chip">2nd Neural Showdown @ ENCARTA '23</span>
+            </div>
           </div>
         </div>
       </div>
@@ -988,94 +1002,104 @@
     <div class="timeline">
 
       <div class="timeline-item">
-        <div class="timeline-date">Jan 2026 – Present</div>
-        <div class="timeline-title">Project Associate <span class="badge">Current</span></div>
-        <div class="timeline-org">CSIR-Institute of Genomics and Integrative Biology · New Delhi</div>
-        <div class="timeline-body">
-          <ul>
-            <li>Working on Protein Foundational Models, Generative Models, and Graph Convolutional Networks for protein research.</li>
-            <li>Building internal software tools that streamline daily lab workflows.</li>
-          </ul>
+        <img class="timeline-logo" src="logos/csir.png" alt="CSIR-IGIB" />
+        <div>
+          <div class="timeline-date">Jan 2026 – Present</div>
+          <div class="timeline-title">Research Associate</div>
+          <div class="timeline-org">CSIR-IGIB · New Delhi</div>
+          <div class="timeline-body">
+            <ul>
+              <li>Working on Protein Foundational Models, Generative Models, and Graph Convolutional Networks for protein research.</li>
+              <li>Building internal software tools that streamline daily lab workflows.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">Jul 2025 – Jan 2026</div>
-        <div class="timeline-title">Graduate Engineer Trainee — Network Security</div>
-        <div class="timeline-org">Secure Meters Limited · Udaipur, Rajasthan</div>
-        <div class="timeline-body">
-          <ul>
-            <li>Managed and secured computer networks by configuring firewalls and switches, applying cybersecurity best practices.</li>
-            <li>Resolved 50+ tickets per month, ensuring system integrity and uptime.</li>
-          </ul>
+        <img class="timeline-logo" src="logos/secure.png" alt="Secure Meters" />
+        <div>
+          <div class="timeline-date">Jul 2025 – Jan 2026</div>
+          <div class="timeline-title">Graduate Engineer Trainee — Network Security</div>
+          <div class="timeline-org">Secure Meters · Udaipur</div>
+          <div class="timeline-body">
+            <ul>
+              <li>Managed and secured computer networks by configuring firewalls and switches, applying cybersecurity best practices.</li>
+              <li>Resolved 50+ tickets per month, ensuring system integrity and uptime.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">Jan 2025 – Feb 2025</div>
-        <div class="timeline-title">Software Engineering Intern</div>
-        <div class="timeline-org">Secure Meters Limited · Udaipur, Rajasthan</div>
-        <div class="timeline-body">
-          <ul>
-            <li>Designed a database and implemented an Employee Benevolent Software System, transitioning from paper-based to fully digital processes.</li>
-          </ul>
+        <img class="timeline-logo" src="logos/iith.png" alt="IIT Hyderabad" />
+        <div>
+          <div class="timeline-date">Jun 2024 – Jul 2024</div>
+          <div class="timeline-title">Summer Intern</div>
+          <div class="timeline-org">IIT Hyderabad</div>
+          <div class="timeline-body">
+            <ul>
+              <li>Built and optimized a dataset of 15K+ code samples for API misuse prediction, improving model training efficiency.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">Jun 2024 – Jul 2024</div>
-        <div class="timeline-title">Summer Intern</div>
-        <div class="timeline-org">IIT Hyderabad · Sangareddy, Telangana</div>
-        <div class="timeline-body">
-          <ul>
-            <li>Built and optimized a dataset of 15K+ code samples for API misuse prediction, improving model training efficiency.</li>
-          </ul>
+        <img class="timeline-logo" src="logos/iitp.png" alt="IIT Patna" />
+        <div>
+          <div class="timeline-date">Jun 2024 – Jul 2024</div>
+          <div class="timeline-title">Computer Vision Intern</div>
+          <div class="timeline-org">IIT Patna</div>
+          <div class="timeline-body">
+            <ul>
+              <li>Reduced recognition errors by 26% and improved text accuracy by 18% in supermarket product identification.</li>
+              <li>Implemented skeletonization, binary conversion, and fine-tuned ABINET on a self-made dataset of 250K+ images across 500+ brand classes.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">Jun 2024 – Jul 2024</div>
-        <div class="timeline-title">Computer Vision Intern</div>
-        <div class="timeline-org">IIT Patna · Remote</div>
-        <div class="timeline-body">
-          <ul>
-            <li>Reduced recognition errors by 26% and improved text accuracy by 18% in supermarket product identification.</li>
-            <li>Implemented skeletonization, binary conversion, and fine-tuned ABINET on a self-made dataset of 250K+ images across 500+ brand classes.</li>
-          </ul>
+        <img class="timeline-logo" src="logos/iitgoa.png" alt="IIT Goa" />
+        <div>
+          <div class="timeline-date">Jan 2024 – Feb 2024</div>
+          <div class="timeline-title">NSM Intern</div>
+          <div class="timeline-org">IIT Goa</div>
+          <div class="timeline-body">
+            <ul>
+              <li>Developed and optimized C++ code for a CFD Solver using Kokkos for performance portability across NVIDIA, AMD, and Intel GPUs.</li>
+              <li>Converted CUDA/OpenACC code to Kokkos with OpenMP support.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">Jan 2024 – Feb 2024</div>
-        <div class="timeline-title">NSM Intern</div>
-        <div class="timeline-org">IIT Goa · Remote</div>
-        <div class="timeline-body">
-          <ul>
-            <li>Developed and optimized C++ code for a CFD Solver using Kokkos for performance portability across NVIDIA, AMD, and Intel GPUs.</li>
-            <li>Converted CUDA/OpenACC code to Kokkos with OpenMP support.</li>
-          </ul>
+        <img class="timeline-logo" src="logos/iitj.png" alt="IIT Jodhpur" />
+        <div>
+          <div class="timeline-date">Jun 2023 – Jul 2023</div>
+          <div class="timeline-title">Project Intern</div>
+          <div class="timeline-org">IIT Jodhpur</div>
+          <div class="timeline-body">
+            <ul>
+              <li>Deployed a desktop application for text annotation in 10+ Indian regional languages; improved annotation accuracy by 40%.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">Jun 2023 – Jul 2023</div>
-        <div class="timeline-title">Project Intern</div>
-        <div class="timeline-org">IIT Jodhpur · Jodhpur, Rajasthan</div>
-        <div class="timeline-body">
-          <ul>
-            <li>Deployed a desktop application for text annotation in 10+ Indian regional languages; improved annotation accuracy by 40%.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">Jun 2023 – Jul 2023</div>
-        <div class="timeline-title">Summer Trainee</div>
-        <div class="timeline-org">Oil and Natural Gas Corporation (ONGC) · Remote</div>
-        <div class="timeline-body">
-          <ul>
-            <li>Led development of ML models for facies identification from well logs, boosting accuracy by 30% and efficiency by 40%.</li>
-          </ul>
+        <img class="timeline-logo" src="logos/ongc.png" alt="ONGC" />
+        <div>
+          <div class="timeline-date">Jun 2023 – Jul 2023</div>
+          <div class="timeline-title">Summer Trainee</div>
+          <div class="timeline-org">ONGC</div>
+          <div class="timeline-body">
+            <ul>
+              <li>Led development of ML models for facies identification from well logs, boosting accuracy by 30% and efficiency by 40%.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -1087,27 +1111,45 @@
 <section id="projects">
   <div class="reveal">
     <p class="section-label">Projects</p>
-    <h2>Things I've built</h2>
+    <h2>Selected work</h2>
     <div class="projects-grid">
 
       <div class="project-card" style="cursor:default;">
-        <div class="project-icon">🗺️</div>
+        <div class="project-icon">🧬</div>
         <div>
-          <div class="project-sub">Web App</div>
-          <div class="project-title">APANIBUS — Jodhpur Bus Route Finder</div>
+          <div class="project-sub">Deep Learning · Biology</div>
+          <div class="project-title">Protein Structure Prediction</div>
         </div>
         <p class="project-desc">
-          A city bus route finder with dynamic map integration (Leaflet.js), 
-          real-time auto-suggest with debounce, highlighted matched text, 
-          and keyboard navigation. Serving daily commuters in Jodhpur.
+          Graph neural networks for protein structure and function prediction.
         </p>
         <div class="project-tags">
-          <span class="project-tag">HTML/CSS/JS</span>
-          <span class="project-tag">Leaflet.js</span>
-          <span class="project-tag">Debounce</span>
+          <span class="project-tag">PyTorch</span>
+          <span class="project-tag">GNN</span>
+          <span class="project-tag">AlphaFold</span>
         </div>
-        <a class="project-link" href="#" target="_blank" rel="noopener">
-          View project
+        <a class="project-link" href="https://github.com/hiteshnagar2611" target="_blank" rel="noopener">
+          GitHub
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="project-card" style="cursor:default;">
+        <div class="project-icon">🧠</div>
+        <div>
+          <div class="project-sub">Transformers · Representation Learning</div>
+          <div class="project-title">Protein Foundation Models</div>
+        </div>
+        <p class="project-desc">
+          Self-supervised pre-training for protein sequence and structure representations.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Transformers</span>
+          <span class="project-tag">ESM</span>
+          <span class="project-tag">Self-Supervised</span>
+        </div>
+        <a class="project-link" href="https://github.com/hiteshnagar2611" target="_blank" rel="noopener">
+          GitHub
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
       </div>
@@ -1115,67 +1157,39 @@
       <div class="project-card" style="cursor:default;">
         <div class="project-icon">✍️</div>
         <div>
-          <div class="project-sub">Deep Learning · NCVPRIPG</div>
-          <div class="project-title">Writer Verification — Handwritten Document Authentication</div>
+          <div class="project-sub">Computer Vision</div>
+          <div class="project-title">Writer Verification</div>
         </div>
         <p class="project-desc">
-          Designed a Siamese Network with a classifier for authenticating handwritten 
-          Hindi documents. Trained on a real-world dataset, achieving AUC of 0.85. 
-          Presented at NCVPRIPG '23.
+          Siamese network for handwritten document authentication. AUC 0.85. NCVPRIPG '23.
         </p>
         <div class="project-tags">
           <span class="project-tag">PyTorch</span>
-          <span class="project-tag">Siamese Network</span>
+          <span class="project-tag">Siamese</span>
           <span class="project-tag">OpenCV</span>
-          <span class="project-tag">Scikit-learn</span>
         </div>
         <a class="project-link" href="https://github.com/hiteshnagar2611" target="_blank" rel="noopener">
-          View on GitHub
+          GitHub
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
       </div>
 
       <div class="project-card" style="cursor:default;">
-        <div class="project-icon">🧬</div>
+        <div class="project-icon">📊</div>
         <div>
-          <div class="project-sub">Bioinformatics · AI</div>
-          <div class="project-title">Protein Foundational Models</div>
+          <div class="project-sub">NLP · Software Engineering</div>
+          <div class="project-title">API Misuse Prediction</div>
         </div>
         <p class="project-desc">
-          Working on generative models and graph convolutional networks for protein 
-          representation learning at CSIR-IGIB. Exploring structure-function 
-          relationships using deep learning.
-        </p>
-        <div class="project-tags">
-          <span class="project-tag">PyTorch</span>
-          <span class="project-tag">GCN</span>
-          <span class="project-tag">Generative Models</span>
-        </div>
-        <a class="project-link" href="https://github.com/hiteshnagar2611" target="_blank" rel="noopener">
-          View on GitHub
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
-      </div>
-
-      <div class="project-card" style="cursor:default;">
-        <div class="project-icon">🏷️</div>
-        <div>
-          <div class="project-sub">Computer Vision · NLP</div>
-          <div class="project-title">Multilingual Annotation Tool</div>
-        </div>
-        <p class="project-desc">
-          Desktop application enabling text annotation in 10+ Indian regional 
-          languages for computer vision tasks. Improved annotation process 
-          accuracy by 40%, developed at IIT Jodhpur.
+          Dataset of 15K+ code samples for predicting API misuse patterns.
         </p>
         <div class="project-tags">
           <span class="project-tag">Python</span>
-          <span class="project-tag">PyQT5</span>
           <span class="project-tag">NLP</span>
-          <span class="project-tag">CV</span>
+          <span class="project-tag">Scikit-learn</span>
         </div>
         <a class="project-link" href="https://github.com/hiteshnagar2611" target="_blank" rel="noopener">
-          View on GitHub
+          GitHub
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
       </div>
@@ -1185,7 +1199,7 @@
 </section>
 
 <!-- TRAVEL -->
-<section id="travel">
+<section id="locations">
   <div class="reveal">
     <p class="section-label">Travel</p>
     <h2>Places I've been</h2>
@@ -1214,9 +1228,6 @@
     </div>
     <div class="lb-body">
       <div class="lb-gallery" id="lbGallery">
-        <div class="lb-gallery-empty" id="lbEmpty">
-          No photos were found. Add images to the corresponding <code>photos/&lt;placeId&gt;/</code> folder and refresh the page.
-        </div>
       </div>
     </div>
   </div>
@@ -1236,7 +1247,7 @@
 </main>
 
 <footer>
-  <p class="footer-copy">© 2025 Hitesh Nagar</p>
+  <p class="footer-copy">© 2026 Hitesh Nagar</p>
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/hiteshnagar" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/hiteshnagar2611" target="_blank" rel="noopener">GitHub</a>
@@ -1359,17 +1370,17 @@
   /* ── RENDER GALLERY ──────────────────────────────── */
   function renderGallery() {
     const gallery = document.getElementById('lbGallery');
-    const empty = document.getElementById('lbEmpty');
     const photos = photoStore[currentPlaceId];
 
+    gallery.innerHTML = '';
+
     if (photos.length === 0) {
-      gallery.innerHTML = '';
+      const empty = document.createElement('div');
+      empty.className = 'lb-gallery-empty';
+      empty.textContent = 'No photos were found. Add images to the corresponding photos/' + currentPlaceId + '/ folder and refresh the page.';
       gallery.appendChild(empty);
-      empty.style.display = 'block';
       return;
     }
-    empty.style.display = 'none';
-    gallery.innerHTML = '';
 
     photos.forEach((photo, idx) => {
       const wrap = document.createElement('div');
